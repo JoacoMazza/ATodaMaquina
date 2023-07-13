@@ -1,0 +1,5 @@
+.venv
+!**/migrations/__init__.py
+**/migrations/*.py
+__pycache__/
+booststrap-5.3.0-dist

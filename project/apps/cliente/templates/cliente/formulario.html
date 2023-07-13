@@ -1,0 +1,25 @@
+{% extends 'Home/base.html' %}
+    {% load crispy_forms_tags %}
+
+
+    {% block INDEX_CONTENIDO %}
+
+        {% if form.errors %}
+            <div class="alerta">
+                Hubo un error en la carga de Datos!
+            </div> 
+        {% endif %}
+
+        <form action="{% url 'cliente:guardarformulario' %}" method="POST">
+            {% csrf_token %}
+            {% if mensaje %}
+                <div class="alertaConcedida">
+                    Formulario enviado correctamnete!
+                </div>
+            {% endif %}
+
+            {{ form }}
+            <button type="submit" class="boton">Guardar</button>
+        </form>
+        
+    {% endblock INDEX_CONTENIDO %}

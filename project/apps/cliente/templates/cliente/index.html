@@ -1,0 +1,13 @@
+{% extends 'Home/base.html' %}
+
+    {% block INDEX_TITULO %} Clientes {% endblock INDEX_TITULO %}
+
+    {% block INDEX_CONTENIDO %}
+
+        {% for cliente in clientes %}
+            <p>{{ cliente.nombre }}</p>
+            <p>{{ cliente.apellido }}</p>
+            <p>{{ cliente.nacimiento }}</p>
+            <p>{{ cliente.sexo_id }}</p>
+        {% endfor %}
+    {% endblock INDEX_CONTENIDO %}
