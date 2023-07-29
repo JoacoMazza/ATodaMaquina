@@ -1,0 +1,15 @@
+{% extends 'Home/base.html' %}
+    {% block INDEX_TITULO %} <h1>Hola</h1> {% endblock INDEX_TITULO %}
+
+    {% block INDEX_CONTENIDO %}
+        <a href="{% url 'producto:crearproducto' %}">Crear Producto</a>
+
+        {% for producto in productos %}
+            <p>{{ producto.nombre }}</p>
+            <p>{{ producto.precio }}</p>
+            <p>{{ producto.descripcion }}</p>
+            <p>{{ producto.imagen }}</p>
+            <p>{{ producto.fecha_actualizacion }}</p>
+        {% endfor %}
+
+    {% endblock INDEX_CONTENIDO %}

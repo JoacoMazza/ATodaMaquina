@@ -1,9 +1,25 @@
 
-<div class="nav-bg">
-    <nav class="navegacion-principal contenedor">                    
-        <a href="{% url 'Home:home' %}">Inicio</a> 
-        <a href="#">Sobre Mi</a>
-        <a href="{% url 'cliente:registrarFormulario' %}">Contactanos</a>
-        <a href="{% url 'cliente:home' %}">Informacion</a>
-    </nav>
-</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ATodaMaquina</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'Home:home' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre Mi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cliente:home' %}">Contactanos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Informacion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
