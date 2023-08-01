@@ -1,14 +1,28 @@
-from django.shortcuts import render, redirect
+from typing import Any
+
+from django.contrib.auth.decorators import login_required
+
+#! importaciones para login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models.query import QuerySet
 from django.http import HttpRequest, HttpResponse
-from .forms import ProductoForm
-from .models import Producto
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
+
+from . import forms, models
+
 def home(request):
-    productos_registros = Producto.objects.all()
-    contexto = {"productos": productos_registros}
-    return render(request, "producto/index.html", contexto)
+    return render(request, "producto/index.html")
 
 
-class FormularioProductoViews(HttpRequest):
+#class FormularioProductoViews(HttpRequest):
 
     def index(request):
         producto = ProductoForm()
@@ -22,12 +36,29 @@ class FormularioProductoViews(HttpRequest):
             
         return render(request, 'producto/crear_producto.html', {'form': producto, 'mensaje': 'OK'})
 
-def crear_producto(request):
-    if request.method == 'POST':
-        form = ProductoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('producto/index.html')
-    else:
-        form = ProductoForm()
-    return render(request, 'producto/crear_producto.html', {'form': form})
+
+#Producto
+#List
+class Productolist(ListView):
+    model = models.Producto
+
+#Create
+class Productocreate(CreateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy('producto:producto_list')
+
+#Detail
+class Productodetail(DetailView):
+    model = models.Producto
+
+#Update
+class Productoupdate(UpdateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy('producto:producto_list')
+
+#Delete
+class Productodelete(DeleteView):
+    model = models.Producto
+    success_url = reverse_lazy('producto:producto_list')

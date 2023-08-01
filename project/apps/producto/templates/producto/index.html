@@ -2,7 +2,11 @@
     {% block INDEX_TITULO %} <h1>Hola</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
-        <a href="{% url 'producto:crearproducto' %}">Crear Producto</a>
+        {% if user.is_staff %}
+            <a href="{% url 'producto:producto_create' %}">Crear Producto</a><br>
+            <a href="{% url 'producto:producto_list' %}">Listar Productos</a><br>
+        {% endif %}
+
 
         {% for producto in productos %}
             <p>{{ producto.nombre }}</p>

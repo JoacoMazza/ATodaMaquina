@@ -138,5 +138,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Para cargar las imagenes
 import os
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/Users/la22_/Desktop/ATodaMaquina/project/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
