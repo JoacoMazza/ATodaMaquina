@@ -1,5 +1,5 @@
 from typing import Any
-
+from .models import Producto
 from django.contrib.auth.decorators import login_required
 
 #! importaciones para login
@@ -19,25 +19,13 @@ from django.views.generic import (
 from . import forms, models
 
 def home(request):
-    return render(request, "producto/index.html")
-
-
-#class FormularioProductoViews(HttpRequest):
-
-    def index(request):
-        producto = ProductoForm()
-        return render(request, 'producto/crear_producto.html', {'form': producto})
-    
-    def proscesarform(request):
-        producto = ProductoForm(request.POST)
-        if producto.is_valid():
-            producto.save()
-            producto = ProductoForm()
-            
-        return render(request, 'producto/crear_producto.html', {'form': producto, 'mensaje': 'OK'})
-
+    productos_registros = Producto.objects.all()
+    contexto = {"productos": productos_registros}
+    return render(request, "producto/index.html", contexto)
 
 #Producto
+
+
 #List
 class Productolist(ListView):
     model = models.Producto

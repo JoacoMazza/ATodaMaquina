@@ -13,7 +13,6 @@ from .models import Cliente, Sexo
 def home(request):
     clientes_registros = Cliente.objects.all()
     contexto = {"clientes": clientes_registros}
-    # return render(request, "index.html", {"clientes": clientes_registros})
     return render(request, "cliente/index.html", contexto)
 
 
