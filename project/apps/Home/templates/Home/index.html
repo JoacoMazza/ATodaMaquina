@@ -4,6 +4,22 @@
 {% block BASE_CONTENIDO %}
     {% block INDEX_TITULO %} Pagina Principal {% endblock INDEX_TITULO %}
     {% block INDEX_CONTENIDO %}
+
+        {% if user.is_authenticated %}
+            {{ mensaje }}
+            <h3> Bienvenido {{ user.username }}</h3>
+        {% endif %}
+
+        {% if user.is_staff %}
+            <div class="row">
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Panel de Administración</a>
+            </div>
+            <div class="row">
+                <a href="{% url 'Home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
+            </div>
+        {% endif %}
+
+        
         <section>
             <h3>Les presento algunos de los cambios que logramos</h3>
             <div>
