@@ -6,7 +6,7 @@
     {% block INDEX_CONTENIDO %}
         {% if user.is_authenticated %}
             <a href="{% url 'producto:producto_create' %}" type="button" class="btn btn-primary col-10 p-2 ">Crear Asesoria</a><br>
-            <a href="{% url 'producto:producto_list' %} type="button" class="btn btn-primary col-10 p-2">Listar Asesoria</a><br>
+            <a href="{% url 'producto:producto_list' %}" type="button" class="btn btn-primary col-10 p-2">Listar Asesoria</a><br>
         {% endif %}
 
 
