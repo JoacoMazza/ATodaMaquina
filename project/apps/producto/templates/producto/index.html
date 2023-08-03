@@ -12,8 +12,9 @@
             <p>{{ producto.nombre }}</p>
             <p>{{ producto.precio }}</p>
             <p>{{ producto.descripcion }}</p>
-            <p>{{ producto.imagen }}</p>
-            <p>{{ producto.fecha_actualizacion }}</p>
+            {% if object.productos.imagen.url %}
+                <img src="{{ object.productos.imagen.url }}" alt="imagen">
+            {% endif %}
         {% endfor %}
 
     {% endblock INDEX_CONTENIDO %}
