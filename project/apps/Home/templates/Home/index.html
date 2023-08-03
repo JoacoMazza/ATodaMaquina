@@ -1,38 +1,38 @@
 {% extends 'Home/base.html' %}
-{% load static %}
+    {% load static %}
 
-{% block BASE_CONTENIDO %}
-    {% block INDEX_TITULO %} Pagina Principal {% endblock INDEX_TITULO %}
-    {% block INDEX_CONTENIDO %}
+    {% block BASE_CONTENIDO %}
+        {% block INDEX_TITULO %} Pagina Principal {% endblock INDEX_TITULO %}
+        {% block INDEX_CONTENIDO %}
 
-        {% if user.is_authenticated %}
-            {{ mensaje }}
-            <h3> Bienvenido {{ user.username }}</h3>
-        {% endif %}
+            {% if user.is_authenticated %}
+                {{ mensaje }}
+                <h3> Bienvenido {{ user.username }}</h3>
+            {% endif %}
 
-        {% if user.is_staff %}
-            <div class="row">
-                <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Panel de Administración</a>
-            </div>
-            <div class="row">
-                <a href="{% url 'Home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
-            </div>
-        {% endif %}
+            {% if user.is_staff %}
+                <div class="row">
+                    <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Panel de Administración</a>
+                </div>
+                <div class="row">
+                    <a href="{% url 'Home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
+                </div>
+            {% endif %}
 
-        
-        <section>
-            <h3>Les presento algunos de los cambios que logramos</h3>
-            <div>
-                <img src="{% static 'Home/assets/img/1AsesoradoFrente.jpg' %}" alt="">
-                <img src="{% static 'Home/assets/img/1AsesoradoEspalda.jpg' %}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo, nulla eu rutrum mattis, justo massa fermentum nisi, et malesuada mi mi a tortor. Fusce consectetur eros sed urna blandit, in posuere nisl pellentesque. Cras elit sem, volutpat id neque eu, tincidunt iaculis magna. Sed nec enim arcu. Duis in massa nec sapien mollis rutrum. Phasellus sit amet lobortis nisi. Phasellus eget arcu a nisi ullamcorper ultricies. Praesent gravida orci eget hendrerit sollicitudin.</p>
-            </div>
-                
-            <div>
-                <img src="{% static 'Home/assets/img/2AsesoradoFrente.jpg' %}" alt="">
-                <img src="{% static 'Home/assets/img/2AsesoradoEspalda.jpg' %}" alt="">
-                <p>Nam laoreet sem non metus viverra mollis. Maecenas diam tortor, bibendum quis augue non, hendrerit ornare mauris. Aliquam et blandit eros. Nam ut auctor ante. Fusce vitae interdum metus, sed tincidunt dolor. Suspendisse quis mattis elit. Sed pretium ac leo at tincidunt. Mauris posuere turpis ante, et dignissim ligula congue at.</p>
-            </div>
-        </section>
-    {% endblock INDEX_CONTENIDO %}
-{% endblock BASE_CONTENIDO %}
+            
+            <section>
+                <h3>Les presento algunos de los cambios que logramos</h3>
+                <div>
+                    <img src="{% static 'Home/assets/img/1AsesoradoFrente.jpg' %}" alt="">
+                    <img src="{% static 'Home/assets/img/1AsesoradoEspalda.jpg' %}" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo, nulla eu rutrum mattis, justo massa fermentum nisi, et malesuada mi mi a tortor. Fusce consectetur eros sed urna blandit, in posuere nisl pellentesque. Cras elit sem, volutpat id neque eu, tincidunt iaculis magna. Sed nec enim arcu. Duis in massa nec sapien mollis rutrum. Phasellus sit amet lobortis nisi. Phasellus eget arcu a nisi ullamcorper ultricies. Praesent gravida orci eget hendrerit sollicitudin.</p>
+                </div>
+                    
+                <div>
+                    <img src="{% static 'Home/assets/img/2AsesoradoFrente.jpg' %}" alt="">
+                    <img src="{% static 'Home/assets/img/2AsesoradoEspalda.jpg' %}" alt="">
+                    <p>Nam laoreet sem non metus viverra mollis. Maecenas diam tortor, bibendum quis augue non, hendrerit ornare mauris. Aliquam et blandit eros. Nam ut auctor ante. Fusce vitae interdum metus, sed tincidunt dolor. Suspendisse quis mattis elit. Sed pretium ac leo at tincidunt. Mauris posuere turpis ante, et dignissim ligula congue at.</p>
+                </div>
+            </section>
+        {% endblock INDEX_CONTENIDO %}
+    {% endblock BASE_CONTENIDO %}

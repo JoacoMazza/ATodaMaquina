@@ -1,10 +1,12 @@
 {% extends 'Home/base.html' %}
+    {% load static %}
+
     {% block INDEX_TITULO %} <h1>Hola</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
         {% if user.is_staff %}
-            <a href="{% url 'producto:producto_create' %}" type="button" class="btn btn-primary col-10">Crear Asesoria</a><br>
-            <a href="{% url 'producto:producto_list' %} type="button" class="btn btn-primary col-10">Listar Asesoria</a><br>
+            <a href="{% url 'producto:producto_create' %}" type="button" class="btn btn-primary col-10 p-2 ">Crear Asesoria</a><br>
+            <a href="{% url 'producto:producto_list' %} type="button" class="btn btn-primary col-10 p-2">Listar Asesoria</a><br>
         {% endif %}
 
 
@@ -12,8 +14,10 @@
             <p>{{ producto.nombre }}</p>
             <p>{{ producto.precio }}</p>
             <p>{{ producto.descripcion }}</p>
-            {% if object.productos.imagen.url %}
-                <img src="{{ object.productos.imagen.url }}" alt="imagen">
+            {% if producto.imagen %}
+                <img src="{{ producto.imagen.url }}" alt="imagen">
+            {% else %}
+                <img src="{% static 'producto/blanco.jpg' %}" alt="imagen">
             {% endif %}
             <a href="#" type="button" class="btn btn-outline-primary col-2">Comprar</a>
         {% endfor %}
