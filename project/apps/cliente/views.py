@@ -3,13 +3,14 @@ from datetime import date
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import is_valid_path
+from django.contrib.admin.views.decorators import staff_member_required
 
 from .forms import ClienteForm
 
 # Create your views here.
 from .models import Cliente, Sexo
 
-
+@staff_member_required
 def home(request):
     clientes_registros = Cliente.objects.all()
     contexto = {"clientes": clientes_registros}
