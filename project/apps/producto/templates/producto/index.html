@@ -3,8 +3,8 @@
 
     {% block INDEX_CONTENIDO %}
         {% if user.is_staff %}
-            <a href="{% url 'producto:producto_create' %}">Crear Asesoria</a><br>
-            <a href="{% url 'producto:producto_list' %}">Listar Asesoria</a><br>
+            <a href="{% url 'producto:producto_create' %}" type="button" class="btn btn-primary col-10">Crear Asesoria</a><br>
+            <a href="{% url 'producto:producto_list' %} type="button" class="btn btn-primary col-10">Listar Asesoria</a><br>
         {% endif %}
 
 
@@ -15,6 +15,7 @@
             {% if object.productos.imagen.url %}
                 <img src="{{ object.productos.imagen.url }}" alt="imagen">
             {% endif %}
+            <a href="#" type="button" class="btn btn-outline-primary col-2">Comprar</a>
         {% endfor %}
 
     {% endblock INDEX_CONTENIDO %}
