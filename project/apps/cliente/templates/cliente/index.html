@@ -9,5 +9,7 @@
             <p>{{ cliente.apellido }}</p>
             <p>{{ cliente.nacimiento }}</p>
             <p>{{ cliente.sexo_id }}</p>
+            <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger  btn-sm">
+                Eliminar</a>
         {% endfor %}
     {% endblock INDEX_CONTENIDO %}
