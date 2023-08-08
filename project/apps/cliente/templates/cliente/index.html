@@ -1,6 +1,6 @@
 {% extends 'Home/base.html' %}
 
-    {% block INDEX_TITULO %} Clientes {% endblock INDEX_TITULO %}
+    {% block INDEX_TITULO %} <h1>Clientes</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
 
@@ -9,7 +9,7 @@
             <p>{{ cliente.apellido }}</p>
             <p>{{ cliente.nacimiento }}</p>
             <p>{{ cliente.sexo_id }}</p>
-            <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger  btn-sm">
+            <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger btn-lg">
                 Eliminar</a>
         {% endfor %}
     {% endblock INDEX_CONTENIDO %}

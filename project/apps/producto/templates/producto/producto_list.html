@@ -1,8 +1,6 @@
 {% extends 'producto/index.html' %}
 
-    {% block INDEX_TITULO %} 
-        Lista de Productos
-    {% endblock INDEX_TITULO %}
+    {% block INDEX_TITULO %} <h1>Lista de Asesorias</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
         
@@ -17,11 +15,11 @@
             {% for object in object_list %}
                 <ul>
                     <li>{{ object.nombre }} ${{ object.precio }}
-                        <a href="{% url 'producto:producto_detail' object.id %}" class="btn btn-secondary btn-sm">
+                        <a href="{% url 'producto:producto_detail' object.id %}" class="btn btn-secondary btn-lg">
                             Ver detalle</a>
-                        <a href="{% url 'producto:producto_update' object.id %}" class="btn btn-primary  btn-sm">
+                        <a href="{% url 'producto:producto_update' object.id %}" class="btn btn-primary  btn-lg">
                             Actualizar</a>
-                        <a href="{% url 'producto:producto_delete' object.id %}" class="btn btn-danger  btn-sm">
+                        <a href="{% url 'producto:producto_delete' object.id %}" class="btn btn-danger  btn-lg">
                             Eliminar</a>
                     </li>
                 </ul>

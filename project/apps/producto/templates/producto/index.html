@@ -1,7 +1,7 @@
 {% extends 'Home/base.html' %}
     {% load static %}
 
-    {% block INDEX_TITULO %} <h1>Hola</h1> {% endblock INDEX_TITULO %}
+    {% block INDEX_TITULO %} <h1>Asesorias</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
         {% if user.is_authenticated %}
@@ -19,7 +19,7 @@
             {% else %}
                 <img src="{% static 'producto/blanco.jpg' %}" alt="imagen">
             {% endif %}
-            <a href="#" type="button" class="btn btn-outline-primary col-2">Comprar</a>
+            <a href="#" type="button" class="btn btn-outline-primary btn-lg col-2">Comprar</a>
         {% endfor %}
 
     {% endblock INDEX_CONTENIDO %}

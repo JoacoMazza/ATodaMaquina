@@ -10,7 +10,7 @@
             <a class="nav-link {% if request.path == "/home/" %} active  {% endif %}" aria-current="page" href="{% url 'Home:home' %}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="#">Sobre Mi</a>
+            <a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="{% url 'Home:about' %}">Sobre Mi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:registrarFormulario' %}">Contactanos</a>

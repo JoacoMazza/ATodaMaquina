@@ -2,7 +2,7 @@
     {% load static %}
 
     {% block BASE_CONTENIDO %}
-        {% block INDEX_TITULO %} Pagina Principal {% endblock INDEX_TITULO %}
+        {% block INDEX_TITULO %} <h1>Pagina Principal</h1> {% endblock INDEX_TITULO %}
         {% block INDEX_CONTENIDO %}
 
             {% if user.is_authenticated %}
