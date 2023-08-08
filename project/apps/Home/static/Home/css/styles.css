@@ -70,4 +70,21 @@ h1, h2, h3{
     background-color: var(--gris);
     color: var(--negro);
 }
+/* Formularios */
+.formulario{
+    background-color: #757575;
+    width: min(60rem, 100%);  /* Min: compara dis parametros y toma el mas pequeño (sirve para ahorrarse media queri) */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+/* Footer */
+.footer{
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
 

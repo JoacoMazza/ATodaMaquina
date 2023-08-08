@@ -5,11 +5,12 @@
     {% block INDEX_CONTENIDO %}
 
         {% for cliente in clientes %}
-            <p>{{ cliente.nombre }}</p>
-            <p>{{ cliente.apellido }}</p>
-            <p>{{ cliente.nacimiento }}</p>
-            <p>{{ cliente.sexo_id }}</p>
-            <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger btn-lg">
-                Eliminar</a>
+            <div class="contenedor">           
+                <p>{{ cliente.nombre }}</p>
+                <p>{{ cliente.apellido }}</p>
+                <p>{{ cliente.nacimiento }}</p>
+                <p>{{ cliente.sexo_id }}</p>
+                <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger btn-lg">Eliminar</a>
+            </div>
         {% endfor %}
     {% endblock INDEX_CONTENIDO %}
