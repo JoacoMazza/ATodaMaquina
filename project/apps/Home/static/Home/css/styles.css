@@ -97,6 +97,7 @@ h1, h2, h3{
 .imagen-producto img{
     max-width: 20rem;
     max-height: 50rem;
+    justify-content: center;
 }
 .asesorias{
     display: flex;
