@@ -1,10 +1,9 @@
 {% extends 'Home/base.html' %}
 
-    {% block INDEX_TITULO %} <h1>Clientes</h1> {% endblock INDEX_TITULO %}
-
     {% block INDEX_CONTENIDO %}
-
-        {% for cliente in clientes %}
+        <h1>Clientes</h1>
+        <div class="muestra">
+            {% for cliente in clientes %}
             <div class="contenedor">           
                 <p>{{ cliente.nombre }}</p>
                 <p>{{ cliente.apellido }}</p>
@@ -13,4 +12,5 @@
                 <a href="{% url 'cliente:cliente_delete' cliente.id %}" class="btn btn-danger btn-lg">Eliminar</a>
             </div>
         {% endfor %}
+        </div>
     {% endblock INDEX_CONTENIDO %}

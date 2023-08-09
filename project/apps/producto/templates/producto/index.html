@@ -11,7 +11,7 @@
         </div>
         {% endif %}
 
-        <section class="asesorias">
+        <section class="imagen-producto muestra">
             {% for producto in productos %}
                 <article>
                     <p>{{ producto.nombre }}</p>
@@ -22,7 +22,9 @@
                             <img src="{{ producto.imagen.url }}" alt="imagen">
                         </div>
                     {% else %}
-                        <img src="{% static 'producto/blanco.jpg' %}" alt="imagen">
+                        <div class="">
+                            <img src="{% static 'producto/blanco.jpg' %}" alt="imagen">
+                        </div>
                     {% endif %}
                     <a href="#" type="button" class="btn btn-outline-primary btn-lg enlaces">Comprar</a>
                 </article>

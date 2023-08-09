@@ -43,10 +43,10 @@ class Productolist(LoginRequiredMixin, ListView):
 #Create
 class Productocreate(LoginRequiredMixin, CreateView):
     model = models.Producto
-    login_url = '../../../login'
-    redirect_field_name = 'redirect_to'
     form_class = forms.ProductoForm
     success_url = reverse_lazy('producto:producto_list')
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
 
 #Detail
 class Productodetail(LoginRequiredMixin, DetailView):

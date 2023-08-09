@@ -4,11 +4,10 @@
 
     {% block INDEX_CONTENIDO %}
         
-        <form class="formulario" method="post">
+        <form class="formulario" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p}}
+            {{ form.as_p }}
             <button class="enlaces" type="submit">Guardar</button>
         </form>
-        
 
     {% endblock INDEX_CONTENIDO %}
