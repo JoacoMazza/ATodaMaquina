@@ -1,4 +1,4 @@
-{% extends 'Home/index.html' %}
+{% extends 'Home/base.html' %}
 
     {% block INDEX_TITULO %} <h1>Registro de usuario</h1> {% endblock INDEX_TITULO %}
 
@@ -7,7 +7,7 @@
         <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <div class="d-grid gap-3"> 
+            <div class="enlaces"> 
                 <button type="submit" class="btn btn-success">Registrar nuevo usuario</button>
             </div>
         </form>

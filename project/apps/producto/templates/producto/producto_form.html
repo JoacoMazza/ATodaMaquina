@@ -1,13 +1,13 @@
-{% extends 'producto/index.html' %}
+{% extends 'Home/base.html' %}
 
     {% block INDEX_TITULO %} <h1>Crear/Actualizar Asesorias</h1> {% endblock INDEX_TITULO %}
 
     {% block INDEX_CONTENIDO %}
         
-        <form method="post">
+        <form class="formulario" method="post">
             {% csrf_token %}
             {{ form.as_p}}
-            <button type="submit">Guardar</button>
+            <button class="enlaces" type="submit">Guardar</button>
         </form>
         
 

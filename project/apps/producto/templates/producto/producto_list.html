@@ -1,11 +1,9 @@
-{% extends 'producto/index.html' %}
-
-    {% block INDEX_TITULO %} <h1>Lista de Asesorias</h1> {% endblock INDEX_TITULO %}
+{% extends 'Home/base.html' %}
 
     {% block INDEX_CONTENIDO %}
-        
-        {% if object_list %}
-
+        <div>
+            <h1>Lista de Asesorias</h1>
+            {% if object_list %}
             <div class="py-lg-4">
                 <form action="{% url 'producto:producto_list' %}" method="get">
                     <input type="text" name="consulta" placeholder="Buscar...">
@@ -24,11 +22,9 @@
                     </li>
                 </ul>
             {% endfor %}        
-        {% else %}
-            <p class="fs-4 fst-italic ">No hay registros ingresados</p>
-        {% endif %}
-
-
-
-    {% endblock INDEX_CONTENIDO %}
+            {% else %}
+                <p class="fs-4 fst-italic ">No hay registros ingresados</p>
+            {% endif %}
+        </div>
+    {% endblock INDEX_CONTENIDO %} 
     

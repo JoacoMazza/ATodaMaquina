@@ -1,7 +1,7 @@
 {% extends 'Home/base.html' %}
     {% load crispy_forms_tags %}
 
-
+    {% block INDEX_TITULO %} <h1>Formulario</h1> {% endblock INDEX_TITULO %}
     {% block INDEX_CONTENIDO %}
 
         {% if form.errors %}
@@ -10,11 +10,11 @@
             </div> 
         {% endif %}
 
-        <form action="{% url 'cliente:guardarformulario' %}" method="POST">
+        <form class="formulario" action="{% url 'cliente:guardarformulario' %}" method="POST">
             {% csrf_token %}
             {% if mensaje %}
                 <div class="alertaConcedida">
-                    Formulario enviado correctamente!
+                    Mensaje Enviado Correctamente!
                 </div>
             {% endif %}
 

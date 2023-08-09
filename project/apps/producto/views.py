@@ -27,8 +27,10 @@ def home(request):
 
 
 #List
-class Productolist(ListView):
+class Productolist(LoginRequiredMixin, ListView):
     model = models.Producto
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
 
     def get_queryset(self) -> QuerySet[Any]:
         if self.request.GET.get("consulta"):
@@ -39,22 +41,30 @@ class Productolist(ListView):
         return object_list
 
 #Create
-class Productocreate(CreateView):
+class Productocreate(LoginRequiredMixin, CreateView):
     model = models.Producto
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
     form_class = forms.ProductoForm
     success_url = reverse_lazy('producto:producto_list')
 
 #Detail
-class Productodetail(DetailView):
+class Productodetail(LoginRequiredMixin, DetailView):
     model = models.Producto
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
 
 #Update
-class Productoupdate(UpdateView):
+class Productoupdate(LoginRequiredMixin, UpdateView):
     model = models.Producto
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
     form_class = forms.ProductoForm
     success_url = reverse_lazy('producto:producto_list')
 
 #Delete
-class Productodelete(DeleteView):
+class Productodelete(LoginRequiredMixin, DeleteView):
     model = models.Producto
+    login_url = '../../../login'
+    redirect_field_name = 'redirect_to'
     success_url = reverse_lazy('producto:producto_list')
